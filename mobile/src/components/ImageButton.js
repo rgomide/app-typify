@@ -1,13 +1,13 @@
-import { Image, Pressable, StyleSheet, Text } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity } from 'react-native'
 
 const ImageButton = (props) => {
   const { title, image, onPress, justifyContent = 'flex-start' } = props
 
   return (
-    <Pressable style={[styles.button, { justifyContent: justifyContent }]} onPress={onPress}>
+    <TouchableOpacity style={[styles.button, { justifyContent: justifyContent }]} onPress={onPress}>
       <Image style={styles.buttonImage} source={image} />
       <Text style={styles.buttonText}>{title}</Text>
-    </Pressable>
+    </TouchableOpacity>
   )
 }
 

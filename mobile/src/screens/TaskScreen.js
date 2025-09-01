@@ -5,8 +5,7 @@ import Task from '../components/Task'
 
 const TaskScreen = (props) => {
   const [taskTitle, setTaskTitle] = useState('')
-
-  const tasks = [
+  const [tasks, setTasks] = useState([
     { id: 1, title: 'Task 01', completed: true },
     { id: 2, title: 'Task 02', completed: false },
     { id: 3, title: 'Task 03', completed: false },
@@ -17,17 +16,27 @@ const TaskScreen = (props) => {
     { id: 8, title: 'Task 08', completed: true },
     { id: 9, title: 'Task 09', completed: true },
     { id: 10, title: 'Task 10', completed: false }
-  ]
+  ])
 
   const handleAddTask = () => {
-    console.log('add task')
-    console.log(taskTitle)
+    if (taskTitle.trim() === '') {
+      return
+    }
+
+    const newTask = { id: tasks.length + 1, title: taskTitle, completed: false }
+    setTasks([newTask, ...tasks])
+    setTaskTitle('')
   }
 
   return (
     <ScrollView style={styles.container}>
       <View style={styles.addTaskContainer}>
-        <TextInput style={styles.addTaskInput} value={taskTitle} onChangeText={setTaskTitle} />
+        <TextInput
+          placeholder="New Task"
+          style={styles.addTaskInput}
+          value={taskTitle}
+          onChangeText={setTaskTitle}
+        />
         <ImageButton
           title="Add Task"
           justifyContent="center"
@@ -39,7 +48,7 @@ const TaskScreen = (props) => {
         data={tasks}
         style={styles.list}
         contentContainerStyle={styles.listContent}
-        key={(task) => task.id}
+        keyExtractor={(task) => task.id}
         renderItem={(element) => {
           const task = element.item
           return <Task task={task} />
