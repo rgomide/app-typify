@@ -1,4 +1,5 @@
-import { Button, StyleSheet, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
+import ImageButton from '../components/ImageButton'
 
 const MainScreen = (props) => {
   const navigation = props.navigation
@@ -16,14 +17,41 @@ const MainScreen = (props) => {
   }
 
   return (
-    <View>
-      <Button title="Posts" onPress={navigateToPostScreen} />
-      <Button title="To Do" onPress={navigateToTaskScreen} />
-      <Button title="Albums" onPress={navigateToAlbumScreen} />
+    <View style={styles.container}>
+      <Text style={styles.title}>Menu Principal</Text>
+      <ImageButton
+        title="Posts"
+        image={require('../../assets/images/posts.svg')}
+        onPress={navigateToPostScreen}
+      />
+      <ImageButton
+        title="To Do"
+        image={require('../../assets/images/to-do.svg')}
+        onPress={navigateToTaskScreen}
+      />
+      <ImageButton
+        title="Albums"
+        image={require('../../assets/images/albums.svg')}
+        onPress={navigateToAlbumScreen}
+      />
     </View>
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#eef'
+  },
+  title: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    color: '#111'
+  }
+})
 
 export default MainScreen

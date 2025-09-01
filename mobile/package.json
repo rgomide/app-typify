@@ -22,7 +22,8 @@
     "react-native": "0.76.7",
     "react-native-safe-area-context": "5.2.0",
     "react-native-screens": "4.8.0",
-    "react-native-web": "~0.19.13"
+    "react-native-web": "~0.19.13",
+    "expo-checkbox": "~4.0.1"
   },
   "devDependencies": {
     "prettier": "^3.5.3",
