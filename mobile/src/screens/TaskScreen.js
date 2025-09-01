@@ -5,17 +5,18 @@ import Task from '../components/Task'
 
 const TaskScreen = (props) => {
   const [taskTitle, setTaskTitle] = useState('')
+
   const [tasks, setTasks] = useState([
-    { id: 1, title: 'Task 01', completed: true },
-    { id: 2, title: 'Task 02', completed: false },
-    { id: 3, title: 'Task 03', completed: false },
-    { id: 4, title: 'Task 04', completed: false },
-    { id: 5, title: 'Task 05', completed: false },
-    { id: 6, title: 'Task 06', completed: true },
-    { id: 7, title: 'Task 07', completed: false },
-    { id: 8, title: 'Task 08', completed: true },
-    { id: 9, title: 'Task 09', completed: true },
-    { id: 10, title: 'Task 10', completed: false }
+    { id: 1, title: 'Tarefa 01', completed: true },
+    { id: 2, title: 'Tarefa 02', completed: false },
+    { id: 3, title: 'Tarefa 03', completed: false },
+    { id: 4, title: 'Tarefa 04', completed: false },
+    { id: 5, title: 'Tarefa 05', completed: false },
+    { id: 6, title: 'Tarefa 06', completed: true },
+    { id: 7, title: 'Tarefa 07', completed: false },
+    { id: 8, title: 'Tarefa 08', completed: true },
+    { id: 9, title: 'Tarefa 09', completed: true },
+    { id: 10, title: 'Tarefa 10', completed: false }
   ])
 
   const handleAddTask = () => {
@@ -32,13 +33,13 @@ const TaskScreen = (props) => {
     <ScrollView style={styles.container}>
       <View style={styles.addTaskContainer}>
         <TextInput
-          placeholder="New Task"
+          placeholder="Nova tarefa..."
           style={styles.addTaskInput}
           value={taskTitle}
           onChangeText={setTaskTitle}
         />
         <ImageButton
-          title="Add Task"
+          title="Adicionar tarefa"
           justifyContent="center"
           image={require('../../assets/images/add.svg')}
           onPress={handleAddTask}

@@ -5,57 +5,57 @@ const PostScreen = (props) => {
   const posts = [
     {
       id: 1,
-      title: 'Post 01',
-      body: 'Post 01 body',
+      title: 'Publicação 01',
+      body: 'lorem ipsum dolor sit amet',
       comments: [
         {
           postId: 1,
           id: 1,
           name: 'Comment 01',
           email: 'comment01@example.com',
-          body: 'Comment 01 body'
+          body: 'lorem ipsum dolor sit amet'
         },
         {
           postId: 1,
           id: 2,
           name: 'Comment 02',
           email: 'comment02@example.com',
-          body: 'Comment 02 body'
+          body: 'lorem ipsum dolor sit amet'
         }
       ]
     },
     {
       id: 2,
-      title: 'Post 02',
-      body: 'Post 02 body',
+      title: 'Publicação 02',
+      body: 'lorem ipsum dolor sit amet',
       comments: [
         {
           postId: 2,
           id: 1,
           name: 'Comment 01',
           email: 'comment01@example.com',
-          body: 'Comment 01 body'
+          body: 'lorem ipsum dolor sit amet'
         }
       ]
     },
     {
       id: 3,
-      title: 'Post 03',
-      body: 'Post 03 body',
+      title: 'Publicação 03',
+      body: 'lorem ipsum dolor sit amet',
       comments: [
         {
           postId: 3,
           id: 1,
           name: 'Comment 01',
           email: 'comment01@example.com',
-          body: 'Comment 01 body'
+          body: 'lorem ipsum dolor sit amet'
         }
       ]
     },
     {
       id: 4,
-      title: 'Post 04',
-      body: 'Post 04 body',
+      title: 'Publicação 04',
+      body: 'lorem ipsum dolor sit amet',
       comments: []
     }
   ]

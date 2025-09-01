@@ -12,11 +12,14 @@ const Stack = createNativeStackNavigator()
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Main">
+      <Stack.Navigator
+        initialRouteName="Main"
+        screenOptions={{ headerStyle: { backgroundColor: '#ddf' } }}
+      >
         <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Post" component={PostScreen} />
-        <Stack.Screen name="Task" component={TaskScreen} />
-        <Stack.Screen name="Album" component={AlbumScreen} />
+        <Stack.Screen name="Post" component={PostScreen} options={{ title: 'Publicações' }} />
+        <Stack.Screen name="Task" component={TaskScreen} options={{ title: 'Tarefas' }} />
+        <Stack.Screen name="Album" component={AlbumScreen} options={{ title: 'Álbuns' }} />
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>

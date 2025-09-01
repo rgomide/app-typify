@@ -14,7 +14,9 @@ const PostCard = (props) => {
     setShowComments(!showComments)
   }
 
-  const accordionTitle = showComments ? 'Hide Comments' : `Show Comments (${post.comments.length})`
+  const accordionTitle = showComments
+    ? 'Esconder comentarios'
+    : `Mostrar comentarios (${post.comments.length})`
   const accordionImage = showComments ? imgArrowDown : imgArrowRight
 
   return (
