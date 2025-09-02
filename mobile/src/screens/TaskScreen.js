@@ -33,7 +33,8 @@ const TaskScreen = (props) => {
     <ScrollView style={styles.container}>
       <View style={styles.addTaskContainer}>
         <TextInput
-          placeholder="Nova tarefa..."
+          placeholder="Título da tarefa..."
+          placeholderTextColor="#ccc"
           style={styles.addTaskInput}
           value={taskTitle}
           onChangeText={setTaskTitle}
