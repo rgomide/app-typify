@@ -9,7 +9,7 @@ const getByUserId = async (userId) => {
   `,
     [userId]
   )
-  console.log(result.rows)
+
   return result.rows
 }
 

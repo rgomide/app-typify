@@ -29,12 +29,12 @@ INSERT INTO albums (title, user_id) VALUES ('Album 3', 1);
 INSERT INTO albums (title, user_id) VALUES ('Album 4', 2);
 
 -- photos
-INSERT INTO photos (title, url, album_id) VALUES ('Photo 1 - Album 1', 'https://via.placeholder.com/150', 1);
-INSERT INTO photos (title, url, album_id) VALUES ('Photo 2 - Album 1', 'https://via.placeholder.com/150', 1);
-INSERT INTO photos (title, url, album_id) VALUES ('Photo 1 - Album 2', 'https://via.placeholder.com/150', 2);
-INSERT INTO photos (title, url, album_id) VALUES ('Photo 2 - Album 2', 'https://via.placeholder.com/150', 2);
-INSERT INTO photos (title, url, album_id) VALUES ('Photo 1 - Album 3', 'https://via.placeholder.com/150', 3);
-INSERT INTO photos (title, url, album_id) VALUES ('Photo 2 - Album 3', 'https://via.placeholder.com/150', 3);
-INSERT INTO photos (title, url, album_id) VALUES ('Photo 1 - Album 4', 'https://via.placeholder.com/150', 4);
-INSERT INTO photos (title, url, album_id) VALUES ('Photo 2 - Album 4', 'https://via.placeholder.com/150', 4);
-INSERT INTO photos (title, url, album_id) VALUES ('Photo 3 - Album 4', 'https://via.placeholder.com/150', 4);
+INSERT INTO photos (title, url, album_id) VALUES ('Photo 1 - Album 1', 'https://picsum.photos/200/300.jpg', 1);
+INSERT INTO photos (title, url, album_id) VALUES ('Photo 2 - Album 1', 'https://picsum.photos/200/300.jpg', 1);
+INSERT INTO photos (title, url, album_id) VALUES ('Photo 1 - Album 2', 'https://picsum.photos/200/300.jpg', 2);
+INSERT INTO photos (title, url, album_id) VALUES ('Photo 2 - Album 2', 'https://picsum.photos/200/300.jpg', 2);
+INSERT INTO photos (title, url, album_id) VALUES ('Photo 1 - Album 3', 'https://picsum.photos/200/300.jpg', 3);
+INSERT INTO photos (title, url, album_id) VALUES ('Photo 2 - Album 3', 'https://picsum.photos/200/300.jpg', 3);
+INSERT INTO photos (title, url, album_id) VALUES ('Photo 1 - Album 4', 'https://picsum.photos/200/300.jpg', 4);
+INSERT INTO photos (title, url, album_id) VALUES ('Photo 2 - Album 4', 'https://picsum.photos/200/300.jpg', 4);
+INSERT INTO photos (title, url, album_id) VALUES ('Photo 3 - Album 4', 'https://picsum.photos/200/300.jpg', 4);

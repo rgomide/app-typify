@@ -7,7 +7,6 @@ const userController = require('./controller/user.controller')
 const taskController = require('./controller/task.controller')
 const albumController = require('./controller/album.controller')
 const postController = require('./controller/post.controller')
-const commentController = require('./controller/comment.controller')
 
 const PORT = 3000
 
@@ -21,7 +20,6 @@ app.use('/', userController)
 app.use('/', taskController)
 app.use('/', albumController)
 app.use('/', postController)
-app.use('/', commentController)
 
 // Inicia o servidor na porta 3000
 app.listen(PORT, () => {
