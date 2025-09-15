@@ -1,12 +1,12 @@
 -- users
-INSERT INTO users (name, email, password) VALUES ('John Doe', 'john.doe@example.com', '123456');
-INSERT INTO users (name, email, password) VALUES ('Jane Doe', 'jane.doe@example.com', '123456');
+INSERT INTO users (name, email, password) VALUES ('User 01', 'john.doe@example.com', '123456');
+INSERT INTO users (name, email, password) VALUES ('User 02', 'jane.doe@example.com', '123456');
 
 -- posts
-INSERT INTO posts (title, content, user_id) VALUES ('Post 1', 'Content 1', 1);
-INSERT INTO posts (title, content, user_id) VALUES ('Post 2', 'Content 2', 2);
-INSERT INTO posts (title, content, user_id) VALUES ('Post 3', 'Content 3', 1);
-INSERT INTO posts (title, content, user_id) VALUES ('Post 4', 'Content 4', 2);
+INSERT INTO posts (title, content, user_id) VALUES ('Post 01', 'Content 01', 1);
+INSERT INTO posts (title, content, user_id) VALUES ('Post 02', 'Content 02', 2);
+INSERT INTO posts (title, content, user_id) VALUES ('Post 03', 'Content 03', 1);
+INSERT INTO posts (title, content, user_id) VALUES ('Post 04', 'Content 04', 2);
 
 -- comments
 INSERT INTO comments (content, user_id, post_id) VALUES ('Comment 1 user 1', 1, 1);

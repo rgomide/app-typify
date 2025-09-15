@@ -11,6 +11,7 @@ router.get('/users/:userId/tasks', async (req, res) => {
 
 router.post('/tasks', async (req, res) => {
   const task = req.body
+
   const newTask = await create(task)
   const newTaskJson = objectToJson(newTask)
 
