@@ -19,15 +19,15 @@ npm run dev
 - `GET /users` - Retorna todos os usuários
 
 ### Tarefas
-- `GET /tasks?userId=:userId` - Retorna todas as tarefas
+- `GET /users/:userId/tasks` - Retorna todas as tarefas
 - `POST /tasks` - Cria uma nova tarefa
 - `PUT /tasks/:id` - Atualiza uma tarefa
 
 ### Álbuns
-- `GET /albums?userId=:userId` - Retorna todos os álbuns
+- `GET /users/:userId/albums` - Retorna todos os álbuns
 
 ### Publicações
-- `GET /posts?userId=:userId` - Retorna todas as publicações
+- `GET /users/:userId/posts` - Retorna todas as publicações
 
 ## Mockups
 

@@ -1,7 +1,7 @@
 const router = require('express').Router()
 
-router.get('/albums', (req, res) => {
-  res.json({ message: 'albums' })
+router.get('/users/:userId/albums', (req, res) => {
+  res.json({ message: 'albums', userId: req.params.userId })
 })
 
 module.exports = router

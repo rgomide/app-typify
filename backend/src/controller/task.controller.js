@@ -1,7 +1,7 @@
 const router = require('express').Router()
 
-router.get('/tasks', (req, res) => {
-  res.json({ message: 'tasks' })
+router.get('/users/:userId/tasks', (req, res) => {
+  res.json({ message: 'tasks', userId: req.params.userId })
 })
 
 router.post('/tasks', (req, res) => {
@@ -9,7 +9,7 @@ router.post('/tasks', (req, res) => {
 })
 
 router.put('/tasks/:id', (req, res) => {
-  res.json({ message: 'tasks' })
+  res.json({ message: 'tasks', id: req.params.id })
 })
 
 module.exports = router
