@@ -3,8 +3,9 @@
 ## Sumário
 
 - [Executar o projeto](#executar-o-projeto)
-- [Rotas](#rotas)
 - [Mockups](#mockups)
+- [Rotas](#rotas)
+- [Banco de dados](#banco-de-dados)
 
 ## Executar o projeto
 
@@ -12,6 +13,10 @@
 npm install
 npm run dev
 ```
+
+## Mockups
+
+![Mockups](../docs/mockups01.png)
 
 ## Rotas
 
@@ -29,6 +34,6 @@ npm run dev
 ### Publicações
 - `GET /users/:userId/posts` - Retorna todas as publicações
 
-## Mockups
+## Banco de dados
 
-![Mockups](../docs/mockups01.png)
+Clique [aqui](../docs/database.md) para acessar a documentação do banco de dados.
