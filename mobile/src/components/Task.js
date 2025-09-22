@@ -1,25 +1,20 @@
 import Checkbox from 'expo-checkbox'
-import { useState } from 'react'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 
 const Task = (props) => {
   const task = props.task
-
-  const [completed, setCompleted] = useState(task.completed)
+  const onTaskToggled = props.onTaskToggled
 
   const handlePress = () => {
-    setCompleted(!completed)
+    task.completed = !task.completed
+    onTaskToggled(task)
   }
+
   return (
     <View style={styles.container}>
-      <Pressable style={styles.checkboxContainer} onPress={handlePress}>
-        <Checkbox
-          style={styles.checkbox}
-          value={completed}
-          onValueChange={setCompleted}
-          color="#eef"
-        />
-        <Text style={completed ? styles.completedText : styles.text}>{task.title}</Text>
+      <Pressable style={styles.checkboxContainer} onPress={() => handlePress()}>
+        <Checkbox style={styles.checkbox} value={task.completed} color="#eef" />
+        <Text style={task.completed ? styles.completedText : styles.text}>{task.title}</Text>
       </Pressable>
     </View>
   )

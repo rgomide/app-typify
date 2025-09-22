@@ -1,32 +1,42 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FlatList, ScrollView, StyleSheet, TextInput, View } from 'react-native'
 import ImageButton from '../components/ImageButton'
 import Task from '../components/Task'
+import useServer from '../hooks/useServer'
 
 const TaskScreen = (props) => {
+  const { userId } = props.route.params
+
+  const { getTasksByUser, createTask, updateTask } = useServer()
+
   const [taskTitle, setTaskTitle] = useState('')
+  const [tasks, setTasks] = useState([])
 
-  const [tasks, setTasks] = useState([
-    { id: 1, title: 'Tarefa 01', completed: true },
-    { id: 2, title: 'Tarefa 02', completed: false },
-    { id: 3, title: 'Tarefa 03', completed: false },
-    { id: 4, title: 'Tarefa 04', completed: false },
-    { id: 5, title: 'Tarefa 05', completed: false },
-    { id: 6, title: 'Tarefa 06', completed: true },
-    { id: 7, title: 'Tarefa 07', completed: false },
-    { id: 8, title: 'Tarefa 08', completed: true },
-    { id: 9, title: 'Tarefa 09', completed: true },
-    { id: 10, title: 'Tarefa 10', completed: false }
-  ])
+  useEffect(() => {
+    fetchTasks()
+  }, [])
 
-  const handleAddTask = () => {
+  const fetchTasks = async () => {
+    const tasks = await getTasksByUser(userId)
+    setTasks(tasks)
+  }
+
+  const handleAddTask = async () => {
     if (taskTitle.trim() === '') {
       return
     }
 
-    const newTask = { id: tasks.length + 1, title: taskTitle, completed: false }
-    setTasks([newTask, ...tasks])
+    const newTask = { title: taskTitle, completed: false, userId: userId }
+
+    await createTask(newTask)
+    await fetchTasks()
+
     setTaskTitle('')
+  }
+
+  const handleTaskToggled = async (task) => {
+    await updateTask(task)
+    await fetchTasks()
   }
 
   return (
@@ -53,7 +63,7 @@ const TaskScreen = (props) => {
         keyExtractor={(task) => task.id}
         renderItem={(element) => {
           const task = element.item
-          return <Task task={task} />
+          return <Task task={task} onTaskToggled={handleTaskToggled} />
         }}
       />
     </ScrollView>
