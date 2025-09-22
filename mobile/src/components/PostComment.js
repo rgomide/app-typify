@@ -5,10 +5,10 @@ const PostComment = (props) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.body}>{comment.body}</Text>
+      <Text style={styles.body}>{comment.content}</Text>
       <View style={styles.nameContainer}>
         <Text style={styles.name}>
-          {comment.name} - {comment.email}
+          {comment.userName} - {comment.userEmail}
         </Text>
       </View>
     </View>

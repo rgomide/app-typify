@@ -3,7 +3,7 @@ const { query } = require('../config/db')
 const getByPostId = async (postId) => {
   const result = await query(
     `
-    SELECT comments.*, users.name AS user_name FROM comments 
+    SELECT comments.*, users.name AS user_name, users.email AS user_email FROM comments 
     INNER JOIN users ON comments.user_id = users.id
     WHERE post_id = $1
     ORDER BY comments.id

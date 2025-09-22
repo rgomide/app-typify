@@ -8,7 +8,6 @@ const Task = (props) => {
   const [completed, setCompleted] = useState(task.completed)
 
   const handlePress = () => {
-    console.log('pressed')
     setCompleted(!completed)
   }
   return (

@@ -1,32 +1,45 @@
 import { Picker } from '@react-native-picker/picker'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import ImageButton from '../components/ImageButton'
+import useServer from '../hooks/useServer'
 
 const MainScreen = (props) => {
   const navigation = props.navigation
 
-  const [users, setUsers] = useState([
-    { id: 1, name: 'Usuário 01' },
-    { id: 2, name: 'Usuário 02' },
-    { id: 3, name: 'Usuário 03' },
-    { id: 4, name: 'Usuário 04' }
-  ])
+  const [userId, setUserId] = useState(null)
+  const { getUsers } = useServer()
+
+  const fetchUsers = async () => {
+    const users = await getUsers()
+
+    setUsers(users)
+
+    if (users.length > 0) {
+      setUserId(users[0].id)
+    }
+  }
+
+  useEffect(() => {
+    fetchUsers()
+  }, [])
+
+  const [users, setUsers] = useState([])
 
   const navigateToAlbumScreen = () => {
-    navigation.navigate('Album')
+    navigation.navigate('Album', { userId })
   }
 
   const navigateToTaskScreen = () => {
-    navigation.navigate('Task')
+    navigation.navigate('Task', { userId })
   }
 
   const navigateToPostScreen = () => {
-    navigation.navigate('Post')
+    navigation.navigate('Post', { userId })
   }
 
   const handleChangeUser = (itemValue) => {
-    console.log(itemValue)
+    setUserId(itemValue)
   }
 
   return (
