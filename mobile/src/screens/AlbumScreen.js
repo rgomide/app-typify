@@ -1,59 +1,23 @@
+import { useEffect, useState } from 'react'
 import { FlatList, StyleSheet, View } from 'react-native'
 import AlbumCard from '../components/AlbumCard'
+import useServer from '../hooks/useServer'
 
 const AlbumScreen = (props) => {
-  const albums = [
-    {
-      userId: 1,
-      id: 1,
-      title: 'Álbum 01',
-      photos: [
-        {
-          albumId: 1,
-          id: 1,
-          title: 'accusamus beatae ad facilis cum similique qui sunt',
-          url: 'https://picsum.photos/200/300?random=1'
-        },
-        {
-          albumId: 1,
-          id: 2,
-          title: 'reprehenderit est deserunt velit ipsam',
-          url: 'https://picsum.photos/200/300?random=2'
-        },
-        {
-          albumId: 1,
-          id: 3,
-          title: 'officia porro iure quia iusto qui ipsa ut modi',
-          url: 'https://picsum.photos/200/300?random=3'
-        },
-        {
-          albumId: 1,
-          id: 4,
-          title: 'officia porro iure quia iusto qui ipsa ut modi',
-          url: 'https://picsum.photos/200/300?random=5'
-        },
-        {
-          albumId: 1,
-          id: 5,
-          title: 'officia porro iure quia iusto qui ipsa ut modi',
-          url: 'https://picsum.photos/200/300?random=6'
-        }
-      ]
-    },
-    {
-      userId: 1,
-      id: 2,
-      title: 'Álbum 02',
-      photos: [
-        {
-          albumId: 2,
-          id: 1,
-          title: 'sunt qui excepturi placeat culpa',
-          url: 'https://picsum.photos/200/300?random=4'
-        }
-      ]
-    }
-  ]
+  const { userId } = props.route.params
+
+  const { getAlbumsByUser } = useServer()
+
+  const [albums, setAlbums] = useState([])
+
+  useEffect(() => {
+    fetchAlbums()
+  }, [])
+
+  const fetchAlbums = async () => {
+    const albums = await getAlbumsByUser(userId)
+    setAlbums(albums)
+  }
 
   return (
     <View style={styles.container}>

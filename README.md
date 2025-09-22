@@ -10,3 +10,4 @@
 - [02 - Layout das telas e criação de componentes](https://github.com/rgomide/app-typify/tree/02-layout-das-telas/mobile)
 - [03 - Configurando a API no backend](https://github.com/rgomide/app-typify/tree/03-configuracao-inicial-backend/backend)
 - [04 - Interação com o banco de dados](https://github.com/rgomide/app-typify/tree/04-integracao-com-banco-de-dados/backend)
+- [05 - Integração entre Mobile e Backend](https://github.com/rgomide/app-typify/tree/05-integracao-entre-aplicacoes)

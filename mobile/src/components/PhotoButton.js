@@ -3,6 +3,7 @@ import { Image, Modal, StyleSheet, TouchableOpacity, View } from 'react-native'
 
 const PhotoButton = (props) => {
   const photo = props.photo
+  const closeImage = require('../../assets/images/close.svg')
 
   const [showModal, setShowModal] = useState(false)
 
@@ -26,7 +27,7 @@ const PhotoButton = (props) => {
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
             <TouchableOpacity style={styles.closeButtonContainer} onPress={handleCloseModal}>
-              <Image style={styles.closeButton} source={require('../../assets/images/close.svg')} />
+              <Image style={styles.closeButton} source={closeImage} />
             </TouchableOpacity>
             <Image style={styles.photoModal} source={{ uri: photo.url }} />
           </View>
